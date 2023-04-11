@@ -1,0 +1,33 @@
+#!/bin/bash
+
+date=$(date +%x_%T)
+
+name1="${date//:/_}"
+name="${name1//./_}.png"
+
+$(import /tmp/$name)
+
+declare -A myArray=( [save]=1 [copy]=2 [feh]=3 )
+
+choice=$(printf "%s\n" "${!myArray[@]}" | dmenu -fn monospace-9)
+
+
+if [ "${myArray[$choice]}" == "1" ]
+then
+if ! [ -d ~/screenshots ]; then
+  mkdir ~/screenshots
+fi
+	cp /tmp/$name ~/screenshots/$name
+else
+
+if [ "${myArray[$choice]}" == "2" ]
+then
+	xclip -selection clipboard -t image/png /tmp/$name
+else
+if [ "${myArray[$choice]}" == "3" ]
+then
+
+	feh --scale-down /tmp/$name
+fi
+fi
+fi

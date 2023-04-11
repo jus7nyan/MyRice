@@ -1,0 +1,13 @@
+#! /bin/bash
+
+export DISPLAY=192.168.1.72:0
+dwm &
+feh --bg-fill ~/Изображения/wallhaven-73l659.jpg
+xfce4-terminal --command="jplay $HOME/VK" --zoom=2
+#pkill dunst
+#dunst -config ./dunst_android_p &
+bash
+#pkill dunst
+pkill cava
+export DISPLAY=:0
+#dunst -config ~/.config/dunst/dunst_desk &

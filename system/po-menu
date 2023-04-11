@@ -1,0 +1,27 @@
+#! /bin/bash
+
+declare -A myArray=( [suspend]=1 [poweroff]=2 [reboot]=3 [logout]=4 [none]=5 )
+
+
+choice=$(printf "%s\n" "${!myArray[@]}" | dmenu -fn monospace-9 -nb "#333333" -nf "#ffffff" -sb "#b27481" -sf "#ffffff")
+
+if [ "${myArray[$choice]}" == "1" ]
+then
+    systemctl suspend
+
+elif [ "${myArray[$choice]}" == "2" ]
+then
+    /usr/sbin/poweroff
+
+elif [ "${myArray[$choice]}" == "3" ]
+then
+    /usr/sbin/reboot
+
+elif [ "${myArray[$choice]}" == "4" ]
+then
+    pkill dwm
+
+elif [ "${myArray[$choise]}" == "5" ]
+then
+    exit
+fi

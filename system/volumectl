@@ -1,0 +1,42 @@
+#! /bin/bash
+
+function conc() {
+    r=""
+    for (( i = 1; i < "$2"; i++ )); do
+        r="$r$1"
+    done
+    echo "$r"
+}
+
+arg="$1"
+if [ "$arg" == "+" ]
+then
+    amixer sset Master playback 2%+ >> /dev/null
+
+fi
+
+if [ "$arg" == "-" ]
+then
+    amixer sset Master playback 2%- >> /dev/null
+fi
+
+
+volume=$(amixer get Master | grep 'Playback' | grep -o '...%' | sed 's/\[//' | sed 's/%//' | sed 's/ //'| awk '{print $1; exit}')
+
+
+k=$(bc <<< "100/40" -l)
+c=$(bc <<< "$volume/$k")
+space=$(bc <<< "40 - $c")
+
+#echo "$k $c $space"
+
+if (($volume < 100))
+then
+    let "space = (40-$c)"
+    s=' '
+    string="[$(conc — $c)<$(conc "$s" "$space")] $volume%"
+else
+    string="[$(conc — 40)]100%"
+fi
+dunstify -h string:x-dunst-stack-tag:test -A volume "$string" & >> /dev/null && clear
+

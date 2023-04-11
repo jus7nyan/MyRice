@@ -1,0 +1,58 @@
+! special
+
+URxvt*.background: [100]#000000
+!URxvt.foreground: #C6D0F5
+URxvt.foreground: #FFFFFF
+URxvt.cursorColor: #F2D5CF
+
+! black
+URxvt.color0: #51576D
+URxvt.color8: #626880
+
+! red
+URxvt.color1: #E78284
+URxvt.color9: #E78284
+
+! green
+URxvt.color2: #A6D189
+URxvt.color10: #A6D189
+
+! yellow
+URxvt.color3: #E5C890
+URxvt.color11: #E5C890
+
+! blue
+URxvt.color4: #8CAAEE
+URxvt.color12: #8CAAEE
+
+! magenta
+URxvt.color5: #F4B8E4
+URxvt.color13: #F4B8E4
+
+! cyan
+URxvt.color6: #81C8BE
+URxvt.color14: #81C8BE
+
+! white
+URxvt.color7: #B5BFE2
+URxvt.color15: #A5ADCE
+
+!! URxvt Appearance
+urxvt.transparent:              true
+urxvt.shading:                  20
+urxvt*depth:                    32
+URxvt*font: xft:    DejaVu Sans Mono:size=8
+urxvt*scrollBar:                false
+
+Xft*dpi:                        96
+Xft*antialias:                  true
+!Xft*hinting:                    true
+!Xft*hintstyle:                  hintfull
+!Xft*rgba:                       rgb
+!URxvt*geometry:                 85x10
+*internalBorder:                1
+!URxvt*fading:                   0
+URxvt*tintColor:                #ffffff
+!URxvt*shading:                  0
+URxvt*inheritPixmap:            False
+

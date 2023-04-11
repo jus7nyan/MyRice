@@ -1,0 +1,58 @@
+! special
+
+URxvt*.background: [70]#000000
+!URxvt.foreground: #C6D0F5
+URxvt.foreground: #FFFFFF
+URxvt.cursorColor: #F2D5CF
+
+! black
+URxvt.color0: #000000
+URxvt.color8: #000000
+
+! red
+URxvt.color1: #CF402D
+URxvt.color9: #CF402D
+
+! green
+URxvt.color2: #47CF40
+URxvt.color10: #47CF40
+
+! yellow
+URxvt.color3: #E6E34C
+URxvt.color11: #E6E34C
+
+! blue
+URxvt.color4: #3144D4
+URxvt.color12: #3144D4
+
+! magenta
+URxvt.color5: #D63EB8
+URxvt.color13: #D63EB8
+
+! cyan
+URxvt.color6: #2DC4CC
+URxvt.color14: #2DC4CC
+
+! white
+URxvt.color7: #FFFFFF
+URxvt.color15: #FFFFFF
+
+!! URxvt Appearance
+urxvt.transparent:              true
+urxvt.shading:                  20
+urxvt*depth:                    32
+URxvt*font: xft:                Noto Mono:size=9
+urxvt*scrollBar:                false
+
+Xft*dpi:                        96
+Xft*antialias:                  true
+!Xft*hinting:                    true
+!Xft*hintstyle:                  hintfull
+!Xft*rgba:                       rgb
+!URxvt*geometry:                 85x10
+*internalBorder:                1
+!URxvt*fading:                   0
+URxvt*tintColor:                #ffffff
+!URxvt*shading:                  0
+URxvt*inheritPixmap:            False
+

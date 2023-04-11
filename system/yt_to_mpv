@@ -1,0 +1,5 @@
+#!/bin/bash
+video=$(xclip -o)
+
+mpv $video -hwdec=no -vo=xv -framedrop=vo
+

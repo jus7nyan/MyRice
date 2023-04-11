@@ -1,0 +1,33 @@
+#! /bin/python3
+
+import os
+import subprocess
+import sys
+
+args = sys.argv[1:]
+if len(args) > 0:
+    cmd = ""
+    for i in args:
+        cmd += f"{i} "
+    os.system(f"playerctl {cmd}")
+else:
+    pass
+
+
+a = subprocess.run(["playerctl", "-l"],capture_output=True)
+players = a.stdout.decode()[:-1].split("\n")
+for i in players:
+    is_pl = subprocess.run(["playerctl", "-p", f"{i}", "status"], capture_output=True)
+    is_pl = is_pl.stdout.decode()[:-1]
+    if is_pl == "Playing":
+        song = str(subprocess.run(["playerctl","-p", f"{i}" ,"metadata","title"],capture_output=True).stdout.decode()[:-1])
+        time = str(subprocess.run(["playerctl","-p", f"{i}" ,"position"],capture_output=True).stdout.decode()[:-1])
+        time = int(float(time))
+        seconds = time % (24 * 3600)
+        hour = seconds // 3600
+        seconds = seconds % 3600
+        minutes = seconds // 60
+        seconds = seconds % 60
+        time = "%02d:%02d:%02d" % (hour, minutes, seconds)
+        string = f"{i}\n\n{song}\n\n{time}"
+        os.system(f"dunstify -h string:x-dunst-stack-tag:test -A player '{string}'&")

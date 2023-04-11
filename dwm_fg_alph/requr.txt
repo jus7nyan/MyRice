@@ -1,0 +1,1 @@
+sudo apt install make libxinerama-dev libx11-dev gcc libxft-dev
