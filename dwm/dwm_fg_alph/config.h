@@ -70,20 +70,12 @@ static const char *termcmd[]  = { "urxvt", NULL };
 
 static const char *volp[]     = { "volumectl", "+", NULL };
 static const char *volm[]     = { "volumectl", "-", NULL };
-static const char *ppause[]   = { "playercontrol", "play-pause", NULL };
-static const char *next[]     = { "playercontrol", "next", NULL };
-static const char *notim[]     = { "playercontrol", NULL };
-static const char *prev[]     = { "playercontrol", "previous", NULL };
 static const char *prnt[]     = { "prntsh", NULL };
-static const char *pipetka[]  = { "pipet", NULL };
 static const char *pomenu[]   = { "po-menu", NULL };
 static const char *yt[]   = { "yt_to_mpv", NULL };
 
 
 static const char *firefox[]  = { "firefox", NULL };
-static const char *telegram[] = { "Telegram", NULL };
-static const char *nvim[]     = { "st", "-e", "nvim", NULL };
-static const char *nvcons[]   = { "nvim", "-c",":term", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -91,25 +83,13 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 
 	{ MODKEY|ShiftMask,             XK_f,      spawn,          {.v = firefox } },
-	{ MODKEY|ShiftMask,             XK_t,      spawn,          {.v = telegram } },
-	{ MODKEY|ShiftMask,             XK_n,      spawn,          {.v = nvim } },
-
-	{ MODKEY|ShiftMask,             XK_c,      spawn,          {.v = nvcons } },
-
 
         { MODKEY|ShiftMask,             XK_Up,         spawn,                  {.v = volp } },
         { MODKEY|ShiftMask,             XK_Down,       spawn,                  {.v = volm } },
-        { False,                        0x1008ff14,    spawn,                  {.v = ppause } },
-        { MODKEY|ShiftMask,             XK_p,          spawn,                  {.v = ppause } },
-        { MODKEY|ShiftMask,             XK_Right,      spawn,                  {.v = next } },
-        { MODKEY|ShiftMask,             XK_m,          spawn,                  {.v = notim } },
 
-        { MODKEY|ShiftMask,             XK_Left,       spawn,                  {.v = prev } },
-        { MODKEY|ShiftMask,             XK_l,          spawn,                  {.v = pipetka } },
+
         { False,                        0x1008ff13,    spawn,                  {.v = volp } },
         { False,                        0x1008ff11,    spawn,                  {.v = volm } },
-        { False,                        0x1008ff17,    spawn,                  {.v = next } },
-        { False,                        0x1008ff16,    spawn,                  {.v = prev } },
         { MODKEY,                       XK_F12,        spawn,                  {.v = prnt } },
 	{ MODKEY,                       XK_Escape,     spawn,                  {.v = pomenu } },
 	{ MODKEY|ShiftMask,             XK_y,          spawn,                  {.v = yt } },
